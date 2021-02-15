@@ -17,7 +17,7 @@ jobs:
        - output.txt
  print_out_file:
   docker:
-   - image: circelci/node:13.8.0
+   - image: cimg/base:2020.01
   steps: 
    - attach_workspace:
       at: /tmp
@@ -30,6 +30,9 @@ workflows:
     jobs:
       - welcome/run
       - save_hello_world_output
+      - print_out_file:
+         requires:
+          - save_hello_world_output
 
 
 
