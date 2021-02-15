@@ -8,7 +8,7 @@ orbs:
 jobs:
  save_hello_world_output:
   docker:
-   - image: circleci/13.8.0
+   - image: circleci/node:13.8.0
   steps:
    - run: echo "trying out how to save this test file" > ~/output.txt
    - persist_to_workspace:
