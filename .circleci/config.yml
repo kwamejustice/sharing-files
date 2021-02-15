@@ -10,9 +10,9 @@ jobs:
   docker:
    - image: circleci/node:13.8.0
   steps:
-   - run: echo "trying out how to save this test file" > ~/output.txt
+   - run: echo "trying out how to save this test file" > /tmp/output.txt
    - persist_to_workspace:
-      root: ~/
+      root: /tmp
       paths:
        - output.txt
 workflows:
